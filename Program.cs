@@ -8,17 +8,15 @@ namespace MethodsHud1._0
 {
     class Program
     {
+        //components ..... - values
         static int health;
+        //static int shield;
         static int score;
         static float lives;
         
 
         static void ShowHud()
         {
-            
-
-
-
             Console.WriteLine(" ");
             Console.BackgroundColor = ConsoleColor.Blue;
             Console.ForegroundColor = ConsoleColor.White;
@@ -26,22 +24,41 @@ namespace MethodsHud1._0
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("NELNOR");
             Console.WriteLine("Health " + health);
+            //Console.WriteLine("Shield " + shield);
             Console.WriteLine("Score " + score);
             Console.WriteLine("Lives " + lives);
             Console.WriteLine("><><><><><><><><><><><><");
             Console.ResetColor();
             Console.WriteLine(" ");
             Console.ReadKey(true);
-
-
-
         }
 
 
         // Damage Calculator
         static void TakeDamage(int damage)
         {
-            health = health - damage;
+            //method exclusive integer
+            //int remainingDamage;
+            //hits shield first
+            //shield = shield - damage;
+            //if (shield <= 0) 
+            //{
+               // remainingDamage = damage - shield;
+               // shield = 0;
+                //whatever damage is left will be removed off health when shiled is broken....
+                health = health - damage;
+           //}
+           //if health is 0, checks for lives removes and if lives are above or equal to 0 health will be restored....
+            if (health <= 0)
+            {
+                health = 0;
+                lives = lives - 1;
+                if (lives >= 0)
+                {
+                    health = 100;
+                }
+            }
+            
         }
 
         // Multiplyer for high score
@@ -52,13 +69,13 @@ namespace MethodsHud1._0
             score = score + enemypoints;
         }
 
-        static void Life()
-        {
-            if (health >= 0)
-            {
-                lives = lives - 1;
-            }
-        }
+        //static void Life()
+        //{
+            //if (health >= 0)
+            //{
+                //lives = lives - 1;
+            //}
+        //}
 
        
         
@@ -79,6 +96,7 @@ namespace MethodsHud1._0
 
         {
             lives = 3;
+            shield = 50;
             health = 100;
             score = 0;
             
@@ -118,7 +136,7 @@ namespace MethodsHud1._0
             Console.ReadKey(true);
             Console.WriteLine("4 enemies apear! unfourtnuetly NELNOR has died");
             TakeDamage(50);
-            Life();
+            //Life();
             ShowHud();
             Console.ReadKey(true);
             
