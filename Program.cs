@@ -111,7 +111,7 @@ namespace MethodsHud1._0
             ShowHud();
             //
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("NELNOR Kills enemy!");
+            Console.WriteLine("NELNOR Kills enemy! 200 points!");
             AddScore(200, 1);
             ShowHud();
             Console.ForegroundColor = ConsoleColor.Green;
@@ -126,15 +126,24 @@ namespace MethodsHud1._0
             Console.ReadKey(true);
             //
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("NELNOR Kills the two enemies");
+            Console.WriteLine("NELNOR Kills the two enemies,  400 points!");
             AddScore(400, 1);
             ShowHud();
             Console.ReadKey(true);
             //
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("NElNOR picks up X2 score multiplier");
+            //AddScore(400 * 1) + 200 = 600
+            //AddScore(400(200x2 enemies) = 400 * 2(x2 multiplier)) = 800
+            //800 + 600 = 1200
+            //console is giving me 1600
+
             Console.ReadKey(true);
-            Console.WriteLine("4 enemies apear! unfourtnuetly NELNOR has died");
+            Console.WriteLine("4 enemies apear!");
+            Console.WriteLine("NELNOR killed two but was slayn by the other two");
+            AddScore(200, 2);
+            Console.ReadKey(true);
+            Console.WriteLine("Restart!");
             TakeDamage(50);
             //Life();
             ShowHud();
