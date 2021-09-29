@@ -96,7 +96,7 @@ namespace MethodsHud1._0
 
         {
             lives = 3;
-            shield = 50;
+            //shield = 50;
             health = 100;
             score = 0;
             
